@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kosarkasidb.MatchesViewController">
+    <children>
+        <TableView fx:id="allMatches" layoutY="-1.0" prefHeight="399.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="homeTeams" prefWidth="203.0" text="Domaci" />
+                <TableColumn fx:id="guestTeams" prefWidth="191.0" text="Gosti" />
+                <TableColumn fx:id="dateTime" prefWidth="205.0" text="Vrijeme" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

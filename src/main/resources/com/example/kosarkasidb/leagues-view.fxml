@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckComboBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kosarkasidb.LeaguesViewController">
+    <children>
+        <HBox layoutY="78.0" prefHeight="278.0" prefWidth="600.0">
+            <children>
+                <VBox prefHeight="278.0" prefWidth="300.0">
+                    <children>
+                        <Label alignment="CENTER" prefHeight="26.0" prefWidth="298.0" text="Podaci za domace">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="chooseHomeCity" prefHeight="25.0" prefWidth="300.0" promptText="Izaberi grad" />
+                        <ComboBox fx:id="chooseHomeClub" prefHeight="25.0" prefWidth="300.0" promptText="Izaberi klub" />
+                        <CheckComboBox fx:id="registerHomePlayers" prefHeight="26.0" prefWidth="300.0" title="Registruj domace igrace" />
+                        <TextField fx:id="dateTime" promptText="Datum i vrijeme utakmice" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="278.0" prefWidth="305.0">
+                    <children>
+                        <Label alignment="CENTER" prefHeight="26.0" prefWidth="303.0" text="Podaci za goste">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="chooseGuestCity" prefHeight="25.0" prefWidth="300.0" promptText="Izaberi grad" />
+                        <ComboBox fx:id="chooseGuestClub" prefHeight="25.0" prefWidth="300.0" promptText="Izaberi klub" />
+                        <CheckComboBox fx:id="registerAwayPlayers" prefHeight="26.0" prefWidth="300.0" title="Registruj gostujuce igrace" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <ComboBox fx:id="chooseCountry" layoutX="225.0" layoutY="14.0" prefWidth="150.0" promptText="Izaberi drzavu" />
+        <HBox layoutX="-2.0" layoutY="359.0" prefHeight="44.0" prefWidth="600.0">
+            <children>
+                <VBox prefHeight="44.0" prefWidth="301.0">
+                    <children>
+                        <Button fx:id="addGame" mnemonicParsing="false" onMousePressed="#setOnActionAddGame" prefHeight="25.0" prefWidth="306.0" text="Dodaj utakmicu" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="44.0" prefWidth="302.0">
+                    <children>
+                        <Button fx:id="showGames" mnemonicParsing="false" onMousePressed="#setOnActionShowGames" prefHeight="25.0" prefWidth="313.0" text="Prikazi utakmice" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Label fx:id="leagueName" layoutX="223.0" layoutY="39.0" prefHeight="26.0" prefWidth="150.0" />
+    </children>
+</AnchorPane>
