@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="302.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kosarkasidb.TableViewController">
+   <children>
+      <TableView fx:id="table" layoutX="1.0" prefHeight="300.0" prefWidth="502.0">
+        <columns>
+          <TableColumn fx:id="clubName" prefWidth="252.0" text="Ime kluba" />
+          <TableColumn fx:id="clubPosition" prefWidth="250.0" text="Pozicija na tabeli" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
