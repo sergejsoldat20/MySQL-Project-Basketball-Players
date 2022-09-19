@@ -31,6 +31,9 @@ public class LeaguesViewController {
     Button addGame;
 
     @FXML
+    Button showTable;
+
+    @FXML
     CheckComboBox<String> registerHomePlayers;
 
     @FXML
@@ -53,6 +56,8 @@ public class LeaguesViewController {
 
     @FXML
     Label leagueName;
+
+    public static String stateName = "";
 
     @FXML
     void initialize() {
@@ -98,8 +103,9 @@ public class LeaguesViewController {
                 registerAwayPlayers.getItems().setAll(Worker.getPlayersFromClub(club));
             }
         });
-    }
 
+        stateName = chooseCountry.getSelectionModel().getSelectedItem();
+    }
 
     public void setOnActionAddGame(MouseEvent event){
         String homeClub = chooseHomeClub.getSelectionModel().getSelectedItem();
@@ -145,6 +151,21 @@ public class LeaguesViewController {
             Parent root = loader.load();
             Scene scene = new Scene(root);
             stage.setTitle("Svi mecevi");
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception e){}
+    }
+
+    public void setOnActionShowTable(MouseEvent event){
+        try{
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-view.fxml"));
+            Parent root = loader.load();
+            TableViewController tableViewController = loader.getController();
+            tableViewController.sendStateToController(chooseCountry.getSelectionModel().getSelectedItem());
+            Scene scene = new Scene(root);
+            stage.setTitle("Tabela");
             stage.setScene(scene);
             stage.show();
         }catch (Exception e){}

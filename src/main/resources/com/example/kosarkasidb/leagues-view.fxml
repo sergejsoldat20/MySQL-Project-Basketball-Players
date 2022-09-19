@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.CheckComboBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kosarkasidb.LeaguesViewController">
+<AnchorPane prefHeight="415.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kosarkasidb.LeaguesViewController">
     <children>
         <HBox layoutY="78.0" prefHeight="278.0" prefWidth="600.0">
             <children>
@@ -52,6 +52,7 @@
                 <VBox prefHeight="44.0" prefWidth="302.0">
                     <children>
                         <Button fx:id="showGames" mnemonicParsing="false" onMousePressed="#setOnActionShowGames" prefHeight="25.0" prefWidth="313.0" text="Prikazi utakmice" />
+                  <Button fx:id="showTable" mnemonicParsing="false" onMousePressed="#setOnActionShowTable" prefHeight="25.0" prefWidth="301.0" text="Prikazi tabelu" />
                     </children>
                 </VBox>
             </children>

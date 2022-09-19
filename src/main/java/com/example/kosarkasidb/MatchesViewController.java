@@ -26,7 +26,6 @@ public class MatchesViewController implements Initializable {
     @FXML
     TableColumn<Match, Timestamp> dateTime;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         homeTeams.setCellValueFactory(new PropertyValueFactory<>("homeTeamName"));
@@ -39,5 +38,4 @@ public class MatchesViewController implements Initializable {
             allMatches.getItems().add(match);
         }
     }
-
 }

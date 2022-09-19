@@ -339,12 +339,9 @@ public class Worker {
         String query = "SELECT idKlub FROM klub where klub.naziv=?";
         ArrayList<String> players = new ArrayList<>();
         try {
-
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.prepareStatement(query);
-
             statement.setString(1,team);
-
             resultSet = statement.executeQuery();
 
             if(resultSet.next()) {
@@ -377,28 +374,19 @@ public class Worker {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-
         Timestamp dTime = Timestamp.valueOf(dateTime);
         int homeId = getIdFromClubName(home);
         int guestId = getIdFromClubName(away);
         String query = "INSERT INTO utakmica (datumVrijeme, idDomaci, idGosti ,idLiga)VALUES(?,?,?,?)";
         ArrayList<String> players = new ArrayList<>();
         try {
-            //id++;
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.prepareStatement(query);
-
-           // statement.setInt(1,id);
             statement.setTimestamp(1,dTime);
             statement.setInt(2,homeId);
             statement.setInt(3,guestId);
             statement.setInt(4,1);
-
             statement.executeUpdate();
-
-
-
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
@@ -419,7 +407,6 @@ public class Worker {
             ConnectionPool.getInstance().checkIn(connection);
         }
     }
-
 
     public static int getMatchId(String home, String guest){
         Connection connection = null;
@@ -513,12 +500,44 @@ public class Worker {
         }
     }
 
+    public static ArrayList<Table> getTable(String stateName){
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        String query = "SELECT * FROM get_table WHERE get_table.nazivDrzave=?";
+        ArrayList<Table> table = new ArrayList<>();
+        try{
+            connection = ConnectionPool.getInstance().checkOut();
+            statement = connection.prepareStatement(query);
+            statement.setString(1,stateName);
+            resultSet = statement.executeQuery();
 
 
-    public static void main(String args[]){
-        //getAllCountries();
-       // allCountries.stream().forEach(System.out::println);
-       // addNewGame("Borac", "Crvena Zvezda","2022-12-12 18:00:00");
+            while(resultSet.next()){
+               Table loopTable = new Table();
+               loopTable.setClubId(resultSet.getInt("idKlub"));
+               loopTable.setTablePosition(resultSet.getInt("pozicija"));
+               loopTable.setClubName(resultSet.getString("imeKluba"));
+               table.add(loopTable);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if (resultSet != null)
+                try {
+                    resultSet.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            if (statement != null)
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            ConnectionPool.getInstance().checkIn(connection);
+        }
+        return table;
     }
-
 }
