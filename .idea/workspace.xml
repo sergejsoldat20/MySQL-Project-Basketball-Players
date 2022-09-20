@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4138ee54-d22e-47f6-a0a4-dc8f5a4f228d" name="Changes" comment="nova tabela">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DbConnection/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DbConnection/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/LeaguesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/LeaguesViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/TableViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/TableViewController.java" afterDir="false" />
-    </list>
+    <list default="true" id="4138ee54-d22e-47f6-a0a4-dc8f5a4f228d" name="Changes" comment="novi commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663415996841</updated>
       <workItem from="1663415998117" duration="9806000" />
-      <workItem from="1663511340289" duration="16108000" />
+      <workItem from="1663511340289" duration="16417000" />
     </task>
     <task id="LOCAL-00001" summary="nova tabela">
       <created>1663605524698</created>
@@ -114,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663605639330</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="novi commit">
+      <created>1663676460905</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663676460905</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +134,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="nova tabela" />
-    <option name="LAST_COMMIT_MESSAGE" value="nova tabela" />
+    <MESSAGE value="novi commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="novi commit" />
   </component>
 </project>
