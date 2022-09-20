@@ -31,8 +31,10 @@ public class TableViewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle){
         clubPosition.setCellValueFactory(new PropertyValueFactory<>("tablePosition"));
         clubName.setCellValueFactory(new PropertyValueFactory<>("clubName"));
+
         Platform.runLater(() -> {
             ArrayList<Table> tableDb = Worker.getTable(stateName);
+            System.out.println(stateName);
             for(Table t : tableDb){
                 table.getItems().add(t);
             }

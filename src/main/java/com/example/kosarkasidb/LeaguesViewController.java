@@ -125,7 +125,7 @@ public class LeaguesViewController {
         System.out.println(homeClub + " - " + guestClub + " - " + dTime);
         Worker.addNewGame(homeClub,guestClub,dTime);
 
-        int matchId = Worker.getMatchId(homeClub, guestClub);
+        int matchId = Worker.getMatchId(homeClub, guestClub,dateTime.getText());
 
         for(String s : homePlayers){
             int playerId = BasketballPlayer.getIdFromName(s.split(" ")[0],s.split(" ")[1]);
@@ -137,7 +137,7 @@ public class LeaguesViewController {
         for(String s : guestPlayers){
             int playerId = BasketballPlayer.getIdFromName(s.split(" ")[0],s.split(" ")[1]);
             int positionId = BasketballPlayer.getPosition(playerId);
-            int clubId = Worker.getIdFromClubName(homeClub);
+            int clubId = Worker.getIdFromClubName(guestClub);
             Worker.addRegisteredPlayers(matchId,clubId,playerId,positionId);
         }
 

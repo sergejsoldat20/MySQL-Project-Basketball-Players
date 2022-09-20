@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4138ee54-d22e-47f6-a0a4-dc8f5a4f228d" name="Changes" comment="">
+    <list default="true" id="4138ee54-d22e-47f6-a0a4-dc8f5a4f228d" name="Changes" comment="nova tabela">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DbConnection/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DbConnection/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/LeaguesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/LeaguesViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/MatchesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/MatchesViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/kosarkasidb/leagues-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/kosarkasidb/leagues-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/TableViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/TableViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,8 +98,23 @@
       <option name="presentableId" value="Default" />
       <updated>1663415996841</updated>
       <workItem from="1663415998117" duration="9806000" />
-      <workItem from="1663511340289" duration="7806000" />
+      <workItem from="1663511340289" duration="16108000" />
     </task>
+    <task id="LOCAL-00001" summary="nova tabela">
+      <created>1663605524698</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663605524698</updated>
+    </task>
+    <task id="LOCAL-00002" summary="nova tabela">
+      <created>1663605639330</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663605639330</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,5 +130,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="nova tabela" />
+    <option name="LAST_COMMIT_MESSAGE" value="nova tabela" />
   </component>
 </project>

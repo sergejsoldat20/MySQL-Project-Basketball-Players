@@ -26,8 +26,6 @@ public class HelloController {
     public void setOnActionLogin(MouseEvent event){
         String username = usernameField.getText();
         String password = passwordField.getText();
-
-
         if(Worker.login(username,password)){
             try {
                 Stage newWindow = new Stage();

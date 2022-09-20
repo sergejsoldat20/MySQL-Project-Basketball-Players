@@ -4,11 +4,12 @@ import Model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Worker {
 
     public static ArrayList<String> allCountries = new ArrayList<>();
-
+    public static Random rand = new Random();
     public static ArrayList<String> getTeamsFromCity(String cityName){
         ArrayList<Club> getAll = getClubs();
         ArrayList<String> result = new ArrayList<>();
@@ -408,14 +409,14 @@ public class Worker {
         }
     }
 
-    public static int getMatchId(String home, String guest){
+    public static int getMatchId(String home, String guest, String dateTime){
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-
+        Timestamp dTime = Timestamp.valueOf(dateTime);
         int homeId = getIdFromClubName(home);
         int guestId = getIdFromClubName(guest);
-        String query = "SELECT idUtakmica FROM mydb.utakmica where idDomaci=? and idGosti=?";
+        String query = "SELECT idUtakmica FROM mydb.utakmica where idDomaci=? and idGosti=? and datumVrijeme=?";
         ArrayList<String> players = new ArrayList<>();
         try {
 
@@ -424,7 +425,7 @@ public class Worker {
 
             statement.setInt(1,homeId);
             statement.setInt(2,guestId);
-
+            statement.setTimestamp(3,dTime);
             resultSet = statement.executeQuery();
 
             if(resultSet.next()) {
@@ -458,27 +459,26 @@ public class Worker {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
 
-        String query = "INSERT INTO kosarkas_registrovan_za_utakmicu (idUtakmica, brojPoena, brojAsistencija, brojSkokova, ukradeneLopte, blokade" +
-                "idKlub, idOsoba, idPozicija)VALUES(?,?,?,?,?,?,?,?,?)";
+        int points = rand.nextInt(50);
+        int asists = rand.nextInt(20);
+        int rebounds = rand.nextInt(20);
+        int steals = rand.nextInt(10);
+        int blocks = rand.nextInt(10);
+        String query = "INSERT INTO kosarkas_registrovan_za_utakmicu (idUtakmica, brojPoena, brojAsistencija, brojSkokova, ukradeneLopte, blokade," +
+                "idKlub, idOsoba)VALUES(?,?,?,?,?,?,?,?)";
         ArrayList<String> players = new ArrayList<>();
         try {
-
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.prepareStatement(query);
-
             statement.setInt(1,matchId);
-            statement.setInt(2,0);
-            statement.setInt(3,0);
-            statement.setInt(4,0);
-            statement.setInt(5,0);
-            statement.setInt(6,0);
+            statement.setInt(2,points);
+            statement.setInt(3,asists);
+            statement.setInt(4,rebounds);
+            statement.setInt(5,steals);
+            statement.setInt(6,blocks);
             statement.setInt(7,clubId);
             statement.setInt(8,playerId);
-            statement.setInt(9,positionId);
             statement.executeUpdate();
-
-
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
@@ -539,5 +539,11 @@ public class Worker {
             ConnectionPool.getInstance().checkIn(connection);
         }
         return table;
+    }
+
+    public static void main(String args[]){
+        //System.out.println(getMatchId("Crvena Zvezda","Partizan","2022-03-03 20:00:00"));
+       // addRegisteredPlayers(2,3,8,1);
+        getTable("Srbija").stream().forEach(System.out::println);
     }
 }
