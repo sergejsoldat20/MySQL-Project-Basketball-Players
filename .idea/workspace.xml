@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4138ee54-d22e-47f6-a0a4-dc8f5a4f228d" name="Changes" comment="novi commit" />
+    <list default="true" id="4138ee54-d22e-47f6-a0a4-dc8f5a4f228d" name="Changes" comment="ddl i dml skripte">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DbConnection/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DbConnection/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/LeaguesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/LeaguesViewController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,20 +36,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/serge/IdeaProjects/KosarkasiDb",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/serge/IdeaProjects/KosarkasiDb&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\serge\IdeaProjects\KosarkasiDb" />
       <recent name="C:\Users\serge\IdeaProjects\KosarkasiDb\target\classes" />
     </key>
   </component>
@@ -92,7 +97,8 @@
       <option name="presentableId" value="Default" />
       <updated>1663415996841</updated>
       <workItem from="1663415998117" duration="9806000" />
-      <workItem from="1663511340289" duration="16417000" />
+      <workItem from="1663511340289" duration="17125000" />
+      <workItem from="1663769535597" duration="10728000" />
     </task>
     <task id="LOCAL-00001" summary="nova tabela">
       <created>1663605524698</created>
@@ -115,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663676460905</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ddl i dml skripte">
+      <created>1663676585007</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663676585007</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +148,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="nova tabela" />
     <MESSAGE value="novi commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="novi commit" />
+    <MESSAGE value="ddl i dml skripte" />
+    <option name="LAST_COMMIT_MESSAGE" value="ddl i dml skripte" />
   </component>
 </project>

@@ -2,6 +2,8 @@ package com.example.kosarkasidb;
 
 import DbConnection.Worker;
 import Model.BasketballPlayer;
+import Model.Table;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -125,21 +127,39 @@ public class LeaguesViewController {
         System.out.println(homeClub + " - " + guestClub + " - " + dTime);
         Worker.addNewGame(homeClub,guestClub,dTime);
 
+        try{
+            Thread.sleep(200);
+        }catch (Exception  ex){
+            ex.printStackTrace();
+        }
+
         int matchId = Worker.getMatchId(homeClub, guestClub,dateTime.getText());
 
-        for(String s : homePlayers){
-            int playerId = BasketballPlayer.getIdFromName(s.split(" ")[0],s.split(" ")[1]);
-            int positionId = BasketballPlayer.getPosition(playerId);
-            int clubId = Worker.getIdFromClubName(homeClub);
-            Worker.addRegisteredPlayers(matchId,clubId,playerId,positionId);
-        }
+        Platform.runLater(() -> {
+            for(String s : homePlayers){
+                int playerId = BasketballPlayer.getIdFromName(s.split(" ")[0],s.split(" ")[1]);
+                int clubId = Worker.getIdFromClubName(homeClub);
+               // System.out.println(s + "domaci");
+                Worker.addRegisteredPlayers(matchId,clubId,playerId);
 
-        for(String s : guestPlayers){
-            int playerId = BasketballPlayer.getIdFromName(s.split(" ")[0],s.split(" ")[1]);
-            int positionId = BasketballPlayer.getPosition(playerId);
-            int clubId = Worker.getIdFromClubName(guestClub);
-            Worker.addRegisteredPlayers(matchId,clubId,playerId,positionId);
-        }
+            }
+            for(String s : guestPlayers){
+                int playerId = BasketballPlayer.getIdFromName(s.split(" ")[0],s.split(" ")[1]);
+                int clubId = Worker.getIdFromClubName(guestClub);
+                Worker.addRegisteredPlayers(matchId,clubId,playerId);
+              //  System.out.println(s + "gosti");
+            }
+        });
+
+      /*  Platform.runLater(() -> {
+            for(String s : guestPlayers){
+                int playerId = BasketballPlayer.getIdFromName(s.split(" ")[0],s.split(" ")[1]);
+                int clubId = Worker.getIdFromClubName(guestClub);
+                Worker.addRegisteredPlayers(matchId,clubId,playerId);
+                System.out.println(s + "gosti");
+            }
+        });*/
+        System.out.println("uspjesno dodani");
 
     }
 

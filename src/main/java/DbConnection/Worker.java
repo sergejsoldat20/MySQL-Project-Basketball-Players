@@ -454,7 +454,7 @@ public class Worker {
         return 0;
     }
 
-    public static void addRegisteredPlayers(int matchId, int clubId, int playerId, int positionId){
+    public static void addRegisteredPlayers(int matchId, int clubId, int playerId){
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -544,6 +544,7 @@ public class Worker {
     public static void main(String args[]){
         //System.out.println(getMatchId("Crvena Zvezda","Partizan","2022-03-03 20:00:00"));
        // addRegisteredPlayers(2,3,8,1);
-        getTable("Srbija").stream().forEach(System.out::println);
+        //getTable("Srbija").stream().forEach(System.out::println);
+       // addRegisteredPlayers(24,4,12);
     }
 }
