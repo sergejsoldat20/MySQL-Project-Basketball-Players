@@ -8,6 +8,6 @@ module com.example.kosarkasidb {
     requires java.sql;
 
     opens Model to javafx.base;
-    opens com.example.kosarkasidb to javafx.fxml;
-    exports com.example.kosarkasidb;
+    opens Controller to javafx.fxml;
+    exports Controller;
 }

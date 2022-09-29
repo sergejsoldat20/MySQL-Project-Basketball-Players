@@ -25,29 +25,22 @@ public class BasketballPlayer {
     }
 
     public static int getPosition(int playerId) {
-
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-
         String query = "SELECT kp.idPozicija FROM \n" +
                 "kosarkas k join kosarkas_igra_na_poziciji kp\n" +
                 "on k.idOsoba=kp.idOsoba\n" +
                 "where k.idOsoba=?";
         try {
-
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.prepareStatement(query);
-
             statement.setInt(1,playerId);
-
             resultSet = statement.executeQuery();
-
             if(resultSet.next()){
                 int id = resultSet.getInt("idPozicija");
                 return id;
             }
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
@@ -74,22 +67,17 @@ public class BasketballPlayer {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-
         String query = "SELECT idOsoba FROM osoba where osoba.ime=? and osoba.prezime=?";
         try {
-
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.prepareStatement(query);
-
             statement.setString(1,name);
             statement.setString(2,surname);
             resultSet = statement.executeQuery();
-
             if(resultSet.next()){
                 int id = resultSet.getInt("idOsoba");
                 return id;
             }
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
@@ -106,7 +94,6 @@ public class BasketballPlayer {
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
-
             ConnectionPool.getInstance().checkIn(connection);
         }
         return 0;

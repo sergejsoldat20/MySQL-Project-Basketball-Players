@@ -1,4 +1,4 @@
-package com.example.kosarkasidb;
+package Controller;
 
 import DbConnection.Worker;
 import Model.Match;

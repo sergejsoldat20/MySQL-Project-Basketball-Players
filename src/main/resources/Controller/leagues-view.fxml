@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.CheckComboBox?>
 
-<AnchorPane prefHeight="415.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kosarkasidb.LeaguesViewController">
+<AnchorPane prefHeight="415.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LeaguesViewController">
     <children>
         <HBox layoutY="78.0" prefHeight="278.0" prefWidth="600.0">
             <children>

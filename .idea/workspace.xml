@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4138ee54-d22e-47f6-a0a4-dc8f5a4f228d" name="Changes" comment="ddl i dml skripte">
+    <list default="true" id="4138ee54-d22e-47f6-a0a4-dc8f5a4f228d" name="Changes" comment="unos registrovanih igraca">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DbConnection/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DbConnection/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/LeaguesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/LeaguesViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/BasketballPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/BasketballPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/LeaguesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LeaguesViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/MatchesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/MatchesViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kosarkasidb/TableViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/TableViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/kosarkasidb/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Controller/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/kosarkasidb/leagues-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Controller/leagues-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/kosarkasidb/matches-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Controller/matches-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/kosarkasidb/table-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Controller/table-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +65,9 @@
       <recent name="C:\Users\serge\IdeaProjects\KosarkasiDb\target\classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HelloApplication">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.kosarkasidb.HelloApplication" />
+  <component name="RunManager" selected="Application.Controller.HelloApplication">
+    <configuration name="Controller.HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Controller.HelloApplication" />
       <module name="KosarkasiDb" />
       <extension name="coverage">
         <pattern>
@@ -81,9 +92,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Controller.HelloApplication" />
+      <item itemvalue="Application.Worker" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.Controller.HelloApplication" />
         <item itemvalue="Application.Worker" />
       </list>
     </recent_temporary>
@@ -98,7 +113,8 @@
       <updated>1663415996841</updated>
       <workItem from="1663415998117" duration="9806000" />
       <workItem from="1663511340289" duration="17125000" />
-      <workItem from="1663769535597" duration="10728000" />
+      <workItem from="1663769535597" duration="14807000" />
+      <workItem from="1664464455248" duration="370000" />
     </task>
     <task id="LOCAL-00001" summary="nova tabela">
       <created>1663605524698</created>
@@ -128,7 +144,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663676585007</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="unos registrovanih igraca">
+      <created>1664308465757</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664308465757</updated>
+    </task>
+    <task id="LOCAL-00006" summary="unos registrovanih igraca">
+      <created>1664308490188</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1664308490188</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +179,7 @@
     <MESSAGE value="nova tabela" />
     <MESSAGE value="novi commit" />
     <MESSAGE value="ddl i dml skripte" />
-    <option name="LAST_COMMIT_MESSAGE" value="ddl i dml skripte" />
+    <MESSAGE value="unos registrovanih igraca" />
+    <option name="LAST_COMMIT_MESSAGE" value="unos registrovanih igraca" />
   </component>
 </project>

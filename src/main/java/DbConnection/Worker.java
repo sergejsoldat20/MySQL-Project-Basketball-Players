@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Worker {
-
     public static ArrayList<String> allCountries = new ArrayList<>();
     public static Random rand = new Random();
     public static ArrayList<String> getTeamsFromCity(String cityName){
@@ -36,14 +35,11 @@ public class Worker {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-
         String query = "SELECT * FROM mydb.drzava";
-
         try{
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
-
             while(resultSet.next()){
                 String countryName = resultSet.getString("naziv");
                 allCountries.add(countryName);
@@ -71,14 +67,12 @@ public class Worker {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-
         String query = "SELECT * FROM mydb.administrator";
         ArrayList<Administrator> adminList = new ArrayList<>();
         try{
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
-
             while(resultSet.next()){
                 Administrator admin = new Administrator();
                 admin.setPassword(resultSet.getString("lozinka"));
@@ -114,14 +108,12 @@ public class Worker {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-
         String query = "SELECT * FROM get_matches";
         ArrayList<Match> allMatches = new ArrayList<>();
         try{
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
-
             while(resultSet.next()){
                 Match match = new Match();
                 match.setMatchId(resultSet.getInt("idUtakmica"));
@@ -158,14 +150,12 @@ public class Worker {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-
         String query = "SELECT * FROM get_cities";
         ArrayList<City> cities = new ArrayList<>();
         try{
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
-
             while(resultSet.next()){
                 City city = new City();
                 city.setCityId(resultSet.getInt("idGrad"));
@@ -198,14 +188,12 @@ public class Worker {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-
         String query = "SELECT * FROM get_clubs";
         ArrayList<Club> allClubs = new ArrayList<>();
         try{
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
-
             while(resultSet.next()){
                 Club club = new Club();
                 club.setClubId(resultSet.getInt("id"));
@@ -238,18 +226,15 @@ public class Worker {
     }
 
     public static ArrayList<BasketballPlayer> getPlayers(){
-
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-
         String query = "SELECT * From get_players";
         ArrayList<BasketballPlayer> allPlayers = new ArrayList<>();
         try{
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
-
             while(resultSet.next()){
                 BasketballPlayer player = new BasketballPlayer();
                 player.setPersonId(resultSet.getInt("idOsoba"));
@@ -283,7 +268,6 @@ public class Worker {
                 }
             ConnectionPool.getInstance().checkIn(connection);
         }
-
         return allPlayers;
     }
 
@@ -291,25 +275,19 @@ public class Worker {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-
         String query = "select ime, prezime from get_players\n" +
                 "where get_players.imeKluba=?";
         ArrayList<String> players = new ArrayList<>();
         try {
-
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.prepareStatement(query);
-
             statement.setString(1,clubName);
-
             resultSet = statement.executeQuery();
-
             while(resultSet.next()){
                 String name = resultSet.getString("ime") + " " + resultSet.getString("prezime");
                 System.out.println(name);
                 players.add(name);
             }
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
@@ -326,7 +304,6 @@ public class Worker {
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
-
             ConnectionPool.getInstance().checkIn(connection);
         }
         return players;
@@ -336,7 +313,6 @@ public class Worker {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-
         String query = "SELECT idKlub FROM klub where klub.naziv=?";
         ArrayList<String> players = new ArrayList<>();
         try {
@@ -344,11 +320,9 @@ public class Worker {
             statement = connection.prepareStatement(query);
             statement.setString(1,team);
             resultSet = statement.executeQuery();
-
             if(resultSet.next()) {
                 return resultSet.getInt("idKlub");
             }
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
@@ -365,7 +339,6 @@ public class Worker {
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
-
             ConnectionPool.getInstance().checkIn(connection);
         }
         return 0;
@@ -404,7 +377,6 @@ public class Worker {
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
-
             ConnectionPool.getInstance().checkIn(connection);
         }
     }
@@ -419,19 +391,15 @@ public class Worker {
         String query = "SELECT idUtakmica FROM mydb.utakmica where idDomaci=? and idGosti=? and datumVrijeme=?";
         ArrayList<String> players = new ArrayList<>();
         try {
-
             connection = ConnectionPool.getInstance().checkOut();
             statement = connection.prepareStatement(query);
-
             statement.setInt(1,homeId);
             statement.setInt(2,guestId);
             statement.setTimestamp(3,dTime);
             resultSet = statement.executeQuery();
-
             if(resultSet.next()) {
                 return resultSet.getInt("idUtakmica");
             }
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
@@ -458,7 +426,6 @@ public class Worker {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-
         int points = rand.nextInt(50);
         int asists = rand.nextInt(20);
         int rebounds = rand.nextInt(20);
@@ -504,7 +471,6 @@ public class Worker {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-
         String query = "SELECT * FROM get_table WHERE get_table.nazivDrzave=?";
         ArrayList<Table> table = new ArrayList<>();
         try{
@@ -512,8 +478,6 @@ public class Worker {
             statement = connection.prepareStatement(query);
             statement.setString(1,stateName);
             resultSet = statement.executeQuery();
-
-
             while(resultSet.next()){
                Table loopTable = new Table();
                loopTable.setClubId(resultSet.getInt("idKlub"));
@@ -541,10 +505,36 @@ public class Worker {
         return table;
     }
 
-    public static void main(String args[]){
-        //System.out.println(getMatchId("Crvena Zvezda","Partizan","2022-03-03 20:00:00"));
-       // addRegisteredPlayers(2,3,8,1);
-        //getTable("Srbija").stream().forEach(System.out::println);
-       // addRegisteredPlayers(24,4,12);
+    public static int getMaxGameId(){
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        String query = "SELECT max(idUtakmica) as id from utakmica";
+        try{
+            connection = ConnectionPool.getInstance().checkOut();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(query);
+            if(resultSet.next()){
+                int id = resultSet.getInt("id");
+                return id;
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if (resultSet != null)
+                try {
+                    resultSet.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            if (statement != null)
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            ConnectionPool.getInstance().checkIn(connection);
+        }
+        return 0;
     }
 }
